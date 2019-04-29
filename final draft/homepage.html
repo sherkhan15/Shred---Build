@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Coiny|Noto+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="homepage.css">
+    <title>SHRED & BUILT</title>
+
+    <script type="text/javascript">
+
+          
+        function computeBMI() {
+            // user inputs
+            var height = Number(document.getElementById("height").value);
+            var heightunits = document.getElementById("heightunits").value;
+            var weight = Number(document.getElementById("weight").value);
+            var weightunits = document.getElementById("weightunits").value;
+    
+    
+            //Convert all units to metric
+            if (heightunits == "inches") height *= 2.54;
+            if (weightunits == "lb") weight *= 0.45359237;
+    
+            //Perform calculation
+    
+            //        var BMI = weight /Math.pow(height, 2)*10000;
+            var BMI = Math.round(weight / Math.pow(height, 2) * 10000);
+    
+            //Display result of calculation
+            document.getElementById("output").innerText = Math.round(BMI * 100) / 100;
+    
+            var output = Math.round(BMI * 100) / 100
+            if (output < 18.5)
+                document.getElementById("comment").innerText = "Underweight";
+            else if (output >= 18.5 && output <= 25)
+                document.getElementById("comment").innerText = "Normal";
+            else if (output >= 25 && output <= 30)
+                document.getElementById("comment").innerText = "Obese";
+            else if (output > 30)
+                document.getElementById("comment").innerText = "Overweight";
+            // document.getElementById("answer").value = output; 
+        }
+        // Get the modal
+
+
+
+    </script>
+
+</head>
+<body>
+    <div id="slideout-menu">
+        <ul>
+                    <li>
+                    <a href="#">Home</a>
+                    </li>
+                    <li>
+                         <a href="splitpage.html">Train With Us</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Gallery</a>
+                    </li>
+        </ul>
+    </div>
+    <nav>
+        <div id = "logo-img">
+            <a href="#">
+                <img src="logoimg.jpg" alt="logo image">
+            </a>
+        </div>
+        <div id ="menu-icon">
+            <i class="fa fa-bars"> </i>
+        </div>
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                 <a href="splitpage.html">Train With Us</a>
+            </li>
+            <li>
+                <a href="gallery.html">Gallery</a>
+            </li>
+        </ul>
+    </nav>      
+    <div id="banner">
+        <h1>SHRED & BUILD</h1>
+        <h3>Strive For Progress, Not Perfection</h3>
+    </div>
+
+    <section>
+        <div class="row">
+            <div class="column">
+            <div class="card">
+                <div class=" bmi">
+                    <br><br><h3>Body Mass Index Calculator</h3>
+                    <b><p>Enter your height: <input type="text" id="height"/>
+                        <select type="multiple" id="heightunits">
+                            <option value="metres" selected="selected">centimetres</option>
+                            <option value="inches">inches</option>
+                        </select>
+                         </p></b>
+                    <br><strong>
+                        <p>Enter your weight: <input type="text" id="weight"/>
+                        <select type="multiple" id="weightunits">
+                            <option value="kg" selected="selected">kilograms</option>
+                            <option value="lb">pounds</option>
+                        </select>
+                    </p></storng>
+                    <input type="submit" value="ComputeBMI" onclick="computeBMI();">
+                    <br><Br><h3>Your BMI is: <span id="output">?</span></h3><br>
+                        <h3>This means you are: <span id="comment"> ?</span> </h3> 
+                    </div>
+                    </div> 
+                </div>
+
+        </section>
+    <div class="column">
+                <div class="card1">
+                    <div class=" login">
+                        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+                        <div id="id01" class="modal">
+        
+                        <form class="modal-content animate" action="/action_page.php">
+                         <div class="imgcontainer">
+                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                         </div>
+
+                         <div class="container">
+                         <label for="uname"><b>Username</b></label>
+                         <input type="text" placeholder="Enter Username" name="uname" required>
+
+                        <label for="psw"><b>Password</b></label>
+                         <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                        <button type="submit">Login</button>
+                         <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                         <span class="psw">Forgot <a href="#">password?</a></span>
+                        </div>
+                         </form>
+                     </div>
+
+                     <script>
+                      // Get the modal
+                          var modal = document.getElementById('id01');
+
+                    // When the user clicks anywhere outside of the modal, close it
+                         window.onclick = function(event) {
+                          if (event.target == modal) {
+                          modal.style.display = "none";
+                         }
+                     }
+                     </script>
+
+                     </div>
+                     </div>
+
+                <div id="signup">
+                    
+                    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+
+<div id="id02" class="modal1">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content1" action="/action_page.php">
+    <div class="container1">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+      </div>
+                    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal1 = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal1) {
+    modal1.style.display = "none";
+  }
+}
+</script>
+</div>
+</section>
+            
+
+    
+        <footer>
+            <div id="left-footer">
+               <h3> <b>Q</b>uick <b>l</b>inks </h3>
+                <p>
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="splitpage.html">Train With Us</a>
+                        </li>
+                        <li>
+                            <a href="gallery.html">Gallery</a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+
+            <div id="right-footer">
+                <h3>follow us on</h3>
+                <div id="social-media-footer">
+                    <ul>
+                      
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                    </ul>
+        </footer>
+    </main>
+    
+</body>
+</html>
