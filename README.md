@@ -1,4 +1,4 @@
-# Shred---Build
+# Shred & Build
 
 
 ONLINE FITNESS SOLUTION
